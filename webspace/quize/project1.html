@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 850px;
+            margin: 0 auto;
+            border: 3px solid grey;
+        }
+
+        #wrap{
+            margin: 0 auto;
+        }
+
+
+        header {
+            width: 798px;
+            height: 100px;
+            line-height: 100px;
+            border-bottom: 1px solid  black;
+            padding-left: 10px;
+        }
+
+        h1 {
+            height: 30px;
+        }
+        p {
+            font-size: 70%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #topWrap {
+            width: 800px;
+            overflow: hidden;
+            height: 30px;
+            border-bottom: 1px solid  black;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #topWrap div {
+            width: 398px;
+            float: left;
+        }
+
+        #topWrap input {
+            float: right;
+        }
+
+        #topWrap ol {
+            overflow: hidden;
+            list-style: none;
+            float: left;
+        }
+
+        #topWrap li {
+            float: left;
+            padding: 5px 30px;
+        }
+
+        #midWrap {
+            width: 800px;
+            overflow: hidden;
+            border-bottom: 1px solid  black;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #contextWrap1, #contextWrap2{
+            border-bottom: 1px solid  black;
+        }
+        #context {
+            width: 598px;
+            overflow: hidden;
+            float: left;
+
+        }
+
+        #ol {
+            width: 198px;
+            overflow: hidden;
+            float: right;
+            font-weight: bold;
+        }
+
+        #ol li {
+            font-size: 80%;
+            font-weight: normal;
+        }
+
+        input[type=text] {
+            border-radius: 10px 0 0 10px;
+            width: 200px;
+            height: 20px;
+            padding: 0 10px;
+        }
+        input[type=submit] {
+            border-radius: 0 10px 10px 0;
+            width: 50px;
+            height: 20px;
+            padding: 0 10px;
+        }
+        #end{
+            width: 800px;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            float: left;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div id="wrap">
+    <header>
+        <div>
+            <h1>HTML5 Example Preview</h1>
+            <p>한빛아카데미</p>
+        </div>
+    </header>
+
+    <div id="topWrap">
+        <div>
+            <ol>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+            </ol>
+        </div>
+        <div>
+            <input type="submit" value="검색">
+            <input type="text" name="search">
+
+        </div>
+    </div>
+    <div id="midWrap">
+        <div id="ol">
+            <div>
+                <ol>카테고리
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ol>
+
+                <ol>최근 글
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                    <li>데이터</li>
+                </ol>
+            </div>
+        </div>
+        <div id="context">
+            <div id="contextWrap1">
+                <div>
+                    <H3>HTML5 개요와 활용</H3>
+                </div>
+                <div>
+                    <P>2013년 02월 14일</P>
+                </div>
+                <div>
+                    <img src="http://placehold.it/480x280" width="430" height="280" alt="사진1">
+                </div>
+                <div>
+                    <P>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Cumque distinctio doloremque ducimus enim ex expedita fugiat
+                        libero modi natus officia, provident quod saepe voluptas.
+                        Consequuntur illum magnam modi ratione repudiandae?
+                    </P>
+                </div>
+            </div>
+            <div id="contextWrap2">
+                <div>
+                    <H3>HTML5 응용과 실습</H3>
+                </div>
+                <div>
+                    <P>2013년 02월 17일</P>
+                </div>
+                <div>
+                    <img src="http://placehold.it/480x280" width="430" height="280" alt="사진1">
+                </div>
+                <div>
+                    <P>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Cumque distinctio doloremque ducimus enim ex expedita fugiat
+                        libero modi natus officia, provident quod saepe voluptas.
+                        Consequuntur illum magnam modi ratione repudiandae?
+                    </P>
+                </div>
+            </div>
+        </div>
+        <div id="end">Create by BitCamp</div>
+    </div>
+</div>
+</body>
+</html>
