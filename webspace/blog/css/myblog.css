@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@700&family=Sunflower:wght@500&display=swap');
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body, div, h1, h2, h3, h4, h5, h6,
+table, input,
+header, nav, aside, section, article,
+p {
+    font-size:16px;
+    font-family: '돋음체',Arial,Helvetica,sans-serif;
+}
+
+body{
+    background-color: cornsilk;
+}
+/*공통으로 사용할 클래스*/
+.font_jua{
+    font-family: 'JUA', sans-serif;
+}
+
+/* 전체요소를 감싸는 블록 */
+#mainWrap{
+    /*넓이*/
+    /*800 - 패징20 - 쉐도우 2 - 모서리2*/
+    width: 776px;
+    /*배경색*/
+    background-color: #FFF;
+    /*외곽선*/
+    border: 1px solid #AAA;
+    /*모서리 둥글게*/
+    border-radius: 5px;
+    /*가운데 정렬*/
+    margin: 10px auto;
+    /*그림자*/
+    box-shadow: 2px 2px 3px #DDD;
+    /*양옆 위아래 떨어뜨려놓기*/
+    padding: 10px;
+}
+
+/*헤더영역*/
+header{
+    padding: 20px
+}
+
+header>h1{
+    font-size: 2.0em;
+    font-weight: 400;
+}
+
+/*네비게이션 영역*/
+nav{
+    /*위아래 외각선*/
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    /*아래 내용이 위로 못올라가도록*/
+    overflow: hidden;
+    /*높이 지정*/
+    height: 35px;
+}
+
+nav>ul{
+    float: left;
+    /*도트 없애기*/
+    list-style: none;
+}
+
+nav>ul>li {
+    /*한줄 세우기*/
+    float: left;
+    /*칸 띄우기*/
+    padding: 0 15px;
+    /*가운데 정렬*/
+    line-height: 35px;
+}
+
+nav>div{
+    float: right;
+}
