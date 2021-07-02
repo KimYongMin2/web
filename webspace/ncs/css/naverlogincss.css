@@ -26,7 +26,7 @@ body {
 }
 
 #main_wrap {
-    width: 490px; /* -10 */
+    width: 480px; /* -10 */
 
     background-color: #FFF;
 
@@ -48,21 +48,21 @@ header > img {
 }
 
 #login_wrap input[type=text] {
-    width: 490px;
+    width: 480px;
     height: 50px;
     margin-bottom: 20px;
 }
 
 #login_wrap input[type=password] {
-    width: 490px;
+    width: 480px;
     height: 50px;
     margin-bottom: 20px;
 }
 
 #login_wrap input[type=submit] {
-    width: 490px;
+    width: 480px;
     height: 50px;
-    background-color: #2DB400;
+    background-color: #03c75a;
     color: #FFFFFF;
     font-weight: bold;
     margin-bottom: 20px;
