@@ -32,13 +32,34 @@
             <h1>생년월일</h1>
             <div id="birth">
                 <input type="text">
-                <input type="text">
+                <select>
+                    <option value>월</option>
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+
                 <input type="text">
             </div>
         </div>
         <div id="jen">
             <h1>성별</h1>
-            <input type="text">
+            <select>
+                <option>성별</option>
+                <option value="남자">남자</option>
+                <option value="여자">여자</option>
+                <option value="선택안함">선택 안함</option>
+            </select>
+
         </div>
         <div id="email">
             <h1>본인 확인 이메일(선택)</h1>
@@ -46,15 +67,31 @@
         </div>
         <div id="phone_wrap">
             <h1>휴대전화</h1>
-            <input type="text">
+            <select class="selectbox_set">
+                <option>대한민국 +82</option>
+                <option>????</option>
+                <option>????</option>
+                <option>????</option>
+                <option>????</option>
+            </select>
+
             <div id="phone">
                 <input type="text">
-                <input type="submit">
+                <input type="submit" value="인증번호 받기">
             </div>
             <input type="text">
         </div>
-        <input type="submit">
+        <input type="submit" value="가입하기">
     </div>
+    <footer>
+        <ol>
+            <li ><a href="#">이용약관</a></li>
+            <li ><a href="#">개인정보처리방침</a></li>
+            <li ><a href="#">책임의 한계와 법적 고지</a></li>
+            <li><a href="#">회원정보 고객센터</a></li>
+        </ol>
+
+    </footer>
 </div>
 </body>
 </html>

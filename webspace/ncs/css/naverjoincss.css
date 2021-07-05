@@ -43,36 +43,103 @@ header {
 #id > input{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
 }
 
 #password > input{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
 }
 
 #password2 > input{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
 }
 
 #name > input{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
 }
 
 #birth > input{
-    width: 180px;
+    width: 185px;
     height: 40px;
+    margin: 10px auto;
 }
 
-#jen > input{
+#birth > select{
+    width: 185px;
+    height: 45px;
+    margin: 10px auto;
+}
+
+#jen > select{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
+
+}
+
+#email > input{
+    width: 580px;
+    height: 40px;
+    margin: 10px auto;
 }
 
 #phone_wrap > input{
     width: 580px;
     height: 40px;
+    margin: 10px auto;
 }
 
+#phone_wrap > select{
+    width: 580px;
+    height: 44px;
+    margin: 10px auto;
+}
+
+#phone > input[type = text]{
+    width: 400px;
+    height: 44px;
+    margin: 10px auto;
+}
+
+#phone > input[type = submit]{
+    width: 168px;
+    height: 44px;
+    margin: 10px auto;
+    background-color: #03c75a;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+#login_wrap > input{
+    width: 580px;
+    height: 44px;
+    margin: 10px auto;
+    background-color: #03c75a;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 1px solid black;
+}
+footer{
+    text-align: center;
+}
+footer>ol{
+    list-style: none;
+    overflow: hidden;}
+ol>li{
+    padding: 0 10px;
+    font-size: 11px;
+    display: inline;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
 
