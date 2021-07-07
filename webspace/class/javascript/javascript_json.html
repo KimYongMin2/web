@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h2 id="json"> 안녕하세요 </h2>
+</body>
+<script>
+    var book = {
+        name: 'java',
+        price: 10000,
+        publisher: 'Orange Media'
+    };
+    console.log(typeof book, book);
+
+    var jsonData = JSON.stringify(book);
+    console.log(typeof jsonData, jsonData);
+    document.getElementById('json').innerHTML += jsonData;
+
+    var newData = '{"name" : "Java2", "price":10000,"publisher" : "OrangeM"}';
+    console.log(typeof newData, newData);
+
+    var newBook = JSON.parse(newData);
+    console.log(typeof newBook, newBook);
+</script>
+</html>
