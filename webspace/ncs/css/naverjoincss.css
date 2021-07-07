@@ -65,13 +65,13 @@ header {
 }
 
 #birth > input{
-    width: 185px;
+    width: 183px;
     height: 40px;
     margin: 10px auto;
 }
 
 #birth > select{
-    width: 185px;
+    width: 183px;
     height: 45px;
     margin: 10px auto;
 }
@@ -102,7 +102,7 @@ header {
 }
 
 #phone > input[type = text]{
-    width: 400px;
+    width: 390px;
     height: 44px;
     margin: 10px auto;
 }
@@ -131,10 +131,13 @@ footer{
 }
 footer>ol{
     list-style: none;
-    overflow: hidden;}
+    overflow: hidden;
+    margin-bottom: 10px;
+
+}
 ol>li{
-    padding: 0 10px;
-    font-size: 11px;
+    padding: 20px 2px;
+    font-size: 13px;
     display: inline;
 }
 

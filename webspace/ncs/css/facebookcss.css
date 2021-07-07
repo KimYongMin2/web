@@ -15,7 +15,7 @@ font-family: 'Sunflower', sans-serif;
 
 html, body, div, h1, h2, h3, h4, h5, h6,
 table, input,
-header, nav, aside, section, article, input
+header, nav, aside, section, article, input, footer
 p {
     font-size: 16px;
     font-family: '돋움체', Arial, Helvetica, sans-serif;
@@ -25,15 +25,158 @@ body {
     background-color: white;
 }
 
-#main_wrap{
-    background-color: #FFF;
-
-    margin: 10px;
-
-    padding: 10px;
+#main_wrap {
+    background-color: #f0f2f5;
+    margin: 0 auto;
 }
 
-header>img{
-    border: 3px solid black;
-    padding: -50px;
+
+#content_wrap {
+    width: 1100px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+header {
+    float: left;
+    width: 550px;
+    margin: 100px 0;
+}
+header h1 {
+    font-size: 1.9em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#login_content {
+    float: right;
+    width: 450px;
+    margin: 50px 10px;
+}
+#login_block {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #ddd;
+    text-align: center;
+    padding: 10px;
+}
+#login_block > input {
+    margin: 10px auto;
+    width: 95%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    font-size: 1.2em;
+    color: #aaa;
+    font-weight: 200;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #3578e5;
+}
+#login_block > input[type="button"] {
+    width: 420.5px;
+    height: 62px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#login_block p {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #aaa;
+}
+#login_block > p:hover {
+    text-decoration: underline;
+}
+
+
+#login_block input[type="submit"] {
+    width: 170px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0 15px 0;
+}
+#login_sub {
+    text-align: center;
+    margin-top: 30px;
+}
+#login_sub a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: white;
+}
+#footer_wrap {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #aaa;
+}
+
+#lang {
+    overflow: hidden;
+    height: 40px;
+    line-height: 30px;
+}
+#lang > ul > li {
+    float: left;
+    margin-right: 15px;
+    font-size: 14px;
+}
+#langset input[type="button"] {
+    float: left;
+    width: 40px;
+    height: 30px;
+    font-size: 25px;
+    margin-left: 20px;
+    border: 1px solid #ddd;
+    color: rgb(53, 52, 52);
+}
+
+/*제일밑 메뉴 바로가기부분 */
+#footermenu {
+    overflow: hidden;
+}
+#footermenu > ul > li {
+    float: left;
+    margin-right: 30px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+/* 최하단 로고 */
+#finallogo {
+    margin-top: 30px;
+}
+
+/* 클래스모음 */
+/* a태그 데코레이션 없애기 */
+.a_deco_none {
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+}
+/*페이스북 파란색 색상 */
+.facebookcolor {
+    background-color: #3578e5;
+}
+/* 새계정만들기 초록색 */
+.joinbtncolor {
+    background-color: #42b72a;
+}
+
+ul{
+    list-style: none;
+}
+.font_small {
+    font-size: 13px;
 }
