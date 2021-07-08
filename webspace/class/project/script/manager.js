@@ -1,19 +1,25 @@
 // 회원의 정보 : 아이디, 비밀번호, 이름
 // Member -> 생성자 함수를 정의
 function Member(id, pw, name) {
-    this.userId = id;
+    this.userid = id;
     this.pw = pw;
-    this.userName = name;
+    this.username = name;
 }
 // 객체가 가지는 메소드는 공통으로 사용 -> prototype
 Member.prototype.makeHtml = function () {
-    return '[id:' + this.userId + ' , pw: ' + this.pw + ' , name: ' + this.userName + ' ]'
+    return '[id:' + this.userid + ' , pw: ' + this.pw + ' , name: ' + this.username + ' ]'
 };
 
 //////////////////////////////////////////////////////////
 
 // 회원의 정보를 저장하는 배열
 var members = []; // new Array()
+
+// 배열 -> JSON(문자열) -> localStorage 저장
+// 저장
+// 수정
+// 삭제
+// setItem('members', JSON.stringify(members))
 
 
 //////////////////////////////////////////////////////////
@@ -23,27 +29,40 @@ var members = []; // new Array()
 
 window.onload = function () {
 
-    // 테이블 세팅
-    setList();
+    //localStorage 저장된 데이터가 있는지 확인
+    // localStorage.getItem('members') 없으면 null 반환
+    if(localStorage.getItem('members') == null) {
+        // 배열 members 를 저장
+        localStorage.setItem('members', JSON.stringify(members));
+    } else {
+        members = JSON.parse(localStorage.getItem('members')); // JSON 문자열 -> 객체로 변환
+        console.log(members);
+        // 테이블 세팅
+        setList();
+    }
 
-    var userid = document.querySelector('#userID');
+
+    // setList();
+
+
+    var id = document.querySelector('#userID');
     var pw = document.querySelector('#pw');
     var repw = document.querySelector('#repw');
-    var userName = document.querySelector('#userName');
+    var name = document.querySelector('#userName');
 
     // regForm 캐스팅
     var regForm = document.getElementById('regForm');
 
     regForm.onsubmit = function () {
 
-        // 사용자가 입력한 값 
+        // 사용자가 입력한 값
         // var userid = document.querySelector('#userID').value;
         // var pw = document.querySelector('#pw').value;
         // var repw = document.querySelector('#repw').value;
         // var userName = document.querySelector('#userName').value;
 
 
-        if (userid.value.trim().length < 1) {
+        if (id.value.trim().length < 1) {
             //alert('이름을 입력해주세요');
             document.querySelector('#userID+div.msg').innerHTML = '필수항목입니다.';
             document.querySelector('#userID+div.msg').style.display = 'block';
@@ -74,25 +93,28 @@ window.onload = function () {
             return false;
         }
 
-        // 사용자 이름 정보 
-        if (userName.value.trim() < 1) {
+        // 사용자 이름 정보
+        if (name.value.trim() < 1) {
             //alert('이름을 입력해주세요.');
             document.querySelector('#userName+div.msg').innerHTML = '필수항목입니다.';
             document.querySelector('#userName+div.msg').style.display = 'block';
             return false;
         }
 
-        console.log(userid.value);
+        console.log(id.value);
         console.log(pw.value);
         console.log(repw.value);
-        console.log(userName.value);
+        console.log(name.value);
 
         // 객체 생성
         //var member = new Member(userid.value, pw.value, userName.value);
         //console.log(typeof member, member.makeHtml());
 
         // 배열에 사용자 정보를 추가
-        members.push(new Member(userid.value, pw.value, userName.value));
+        members.push(new Member(id.value, pw.value, name.value));
+
+        // 저장
+        localStorage.setItem('members', JSON.stringify(members));
 
         alert('등록되었습니다.');
         console.log('회원 리스트', members);
@@ -106,7 +128,7 @@ window.onload = function () {
         return false;
     }
 
-    userid.addEventListener('focus', function () {
+    id.addEventListener('focus', function () {
         document.querySelector('#userID+div.msg').style.display = 'none';
         document.querySelector('#userID+div.msg').innerHTML = '';
         //userid.value='';
@@ -123,21 +145,19 @@ window.onload = function () {
         repw.value = '';
     });
 
-    userName.addEventListener('focus', function () {
+    name.addEventListener('focus', function () {
         document.querySelector('#userName+div.msg').style.display = 'none';
         document.querySelector('#userName+div.msg').innerHTML = '';
     });
-
-
-
-
-
-
 
 }
 
 // 배열에 있는 요소를 -> table tr 행을 만들어서 출력
 function setList() {
+
+    console.log(members);
+    // console.log(JSON.stringify(members));
+    // localStorage.setItem('members', JSON.stringify(members));
 
     // table 의 tbody 캐스팅
     var list = document.querySelector('#list');
@@ -162,10 +182,11 @@ function setList() {
         for (var i = 0; i < members.length; i++) {
             tbody += '<tr>';
             tbody += '  <td>' + i + '</td>';
-            tbody += '  <td>' + members[i].userId + '</td>';
+            tbody += '  <td>' + members[i].userid + '</td>';
             tbody += '  <td>' + members[i].pw + '</td>';
-            tbody += '  <td>' + members[i].userName + '</td>';
-            tbody += '  <td> <a href="javascript:editMember('+i+')">수정</a> | <a href="javascript:deleteMember('+i+')">삭제</a></td>';
+            tbody += '  <td>' + members[i].username + '</td>';
+            tbody += '  <td> <a href="javascript:editMember('+i+')">수정</a> |' +
+                '<a href="javascript:deleteMember('+i+')">삭제</a></td>';
             tbody += '</tr>';
         }
     }
@@ -189,6 +210,10 @@ function deleteMember(index) {
     if(confirm('삭제하시겠습니까?')){
         members.splice(index, 1);
         alert('삭제되었습니다.');
+
+        // 저장
+        localStorage.setItem('members', JSON.stringify(members));
+
         // 테이블 리스트를 갱신
         setList();
     }
@@ -215,10 +240,10 @@ function editMember(index) {
     var editIndex = document.querySelector('#index');
 
     // 이전 데이터를 폼에 세팅
-    editUserId.value = members[index].userId;
+    editUserId.value = members[index].userid;
     editPw.value = members[index].pw;
     editRePw.value = members[index].pw;
-    editName.value = members[index].userName;
+    editName.value = members[index].username;
     editIndex.value = index;
 
     document.querySelector('#editForm').onsubmit= function(){
@@ -237,17 +262,24 @@ function editMember(index) {
         }
 
         members[editIndex.value].pw = editPw.value;
-        members[editIndex.value].userName = editName.value;
+        members[editIndex.value].username = editName.value;
+
+        // 저장
+        localStorage.setItem('members', JSON.stringify(members));
 
         alert('수정되었습니다.');
 
         // 테이블 세팅
         setList();
+
         editMemberClose();
+
         return false;
     }
 
 }
+
+
 
 function editMemberClose(){
     document.querySelector('#editFormArea').style.display = 'none';
