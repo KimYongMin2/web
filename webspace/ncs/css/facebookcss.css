@@ -25,6 +25,10 @@ body {
     background-color: white;
 }
 
+ul{
+    list-style: none;
+}
+
 #main_wrap {
     background-color: #f0f2f5;
     margin: 0 auto;
@@ -43,8 +47,8 @@ header {
     margin: 100px 0;
 }
 header h1 {
-    font-size: 1.9em;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: bold;
     margin-top: 10px;
 }
 
@@ -62,26 +66,23 @@ header h1 {
 }
 #login_block > input {
     margin: 10px auto;
-    width: 95%;
+    width: 400px;
     height: 60px;
     border-radius: 10px;
     border: 1px solid #ddd;
     padding-left: 10px;
-    font-size: 1.2em;
+    font-size: 18px;
     color: #aaa;
-    font-weight: 200;
+    font-weight: bold;
 }
 
-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 1px #3578e5;
-}
 #login_block > input[type="button"] {
-    width: 420.5px;
-    height: 62px;
+    width: 400px;
+    height: 60px;
     color: white;
-    font-size: 1.5em;
+    font-size: 24px;
     font-weight: bold;
+    background-color: #3578e5;
 }
 
 #login_block p {
@@ -89,10 +90,10 @@ input:focus {
     padding: 15px 0;
     border-bottom: 1px solid #aaa;
 }
+
 #login_block > p:hover {
     text-decoration: underline;
 }
-
 
 #login_block input[type="submit"] {
     width: 170px;
@@ -105,12 +106,19 @@ input:focus {
     text-align: center;
     margin-top: 30px;
 }
+
+#login_sub a{
+    text-decoration: none;
+    color: black;
+}
 #login_sub a:hover {
     text-decoration: underline;
 }
+
 footer {
     background-color: white;
 }
+
 #footer_wrap {
     width: 1200px;
     margin: 0 auto;
@@ -127,26 +135,27 @@ footer a {
     height: 40px;
     line-height: 30px;
 }
+
 #lang > ul > li {
     float: left;
     margin-right: 15px;
     font-size: 14px;
 }
-#langset input[type="button"] {
+
+#langSet input[type="button"] {
     float: left;
     width: 40px;
     height: 30px;
     font-size: 25px;
     margin-left: 20px;
-    border: 1px solid #ddd;
-    color: rgb(53, 52, 52);
+
 }
 
-/*제일밑 메뉴 바로가기부분 */
-#footermenu {
+#menu {
     overflow: hidden;
 }
-#footermenu > ul > li {
+
+#menu > ul > li {
     float: left;
     margin-right: 30px;
     font-size: 14px;
@@ -154,29 +163,16 @@ footer a {
     line-height: 20px;
     margin-top: 10px;
 }
-/* 최하단 로고 */
-#finallogo {
+
+
+#footerLogo {
     margin-top: 30px;
 }
 
-/* 클래스모음 */
-/* a태그 데코레이션 없애기 */
-.a_deco_none {
-    text-decoration: none;
-    color: rgb(7, 7, 7);
-}
-/*페이스북 파란색 색상 */
-.facebookcolor {
-    background-color: #3578e5;
-}
-/* 새계정만들기 초록색 */
-.joinbtncolor {
+#login_block > input[type = 'submit'] {
     background-color: #42b72a;
 }
 
-ul{
-    list-style: none;
-}
-.font_small {
+#footerLogo > div {
     font-size: 13px;
 }
