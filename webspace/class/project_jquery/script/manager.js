@@ -51,19 +51,22 @@ $(document).ready(function() {
                 return false;
             }
 
-            if(!(isEmail(id.val().trim()))){
+
+            if(!(regCheck(2,id.val().trim()))){
                 $('#userID+div.msg').html('아이디는 이메일 형식으로 입력해주세요').css('display', 'block');
                 return false;
             };
 
-            if(!(isName(name.val().trim()))){
+            if(!(regCheck(0, name.val().trim()))){
                 $('#userName+div.msg').html('이름은 한글과 영문으로 입력해주세요.').css('display', 'block');
                 return false;
             };
 
-            if(!(isPassword(pw.val().trim()))){
-                $('#pw+div.msg').html('비밀번호는 대소문자, 숫자가 있어야합니다.').css('display', 'block');                return false;
+            if(!(regCheck(1,pw.val().trim()))){
+                $('#pw+div.msg').html('비밀번호는 대소문자, 숫자가 있어야합니다.').css('display', 'block');
+                return false;
             };
+
 
             // 배열에 사용자 정보를 추가
             members.push(new Member(id.val(), pw.val(), name.val()));

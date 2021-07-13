@@ -42,7 +42,7 @@ function setList() {
 function deleteMember(index) {
 
 
-    if(confirm('삭제하시겠습니까?')){
+    if (confirm('삭제하시겠습니까?')) {
         members.splice(index, 1);
         alert('삭제되었습니다.');
 
@@ -60,7 +60,7 @@ function deleteMember(index) {
 function editMember(index) {
 
     // 수정 폼 영역이 노출되어야 한다!
-    $('#editFormArea').css('display','block');
+    $('#editFormArea').css('display', 'block');
     // editForm의 태그들의 value  값을 세팅
     var editUserId = $('#editId');
     var editPw = $('#editPw');
@@ -75,31 +75,34 @@ function editMember(index) {
     editName.val(members[index].username);
     editIndex.val(index);
 
-    $('#editForm').submit(function (){
+    $('#editForm').submit(function () {
 
         // 비밀번호와 비밀번호 확인이 같은지 체크
-        if(editPw.val() != editRePw.val()){
+        if (editPw.val() != editRePw.val()) {
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
         }
 
-        if(!(isEmail(editUserId.val().trim()))){
-           alert('아이디는 이메일 형식으로 입력해주세요');
+        if (!(regCheck(2, editUserId.val().trim()))) {
+            alert('아이디는 이메일 형식으로 입력해주세요');
             return false;
-        };
+        }
+        ;
 
-        if(!(isName(editName.val().trim()))){
+        if (!(regCheck(0, editName.val().trim()))) {
             alert('한글과 영문으로 입력해주세요.');
             return false;
-        };
+        }
+        ;
 
-        if(!(isPassword(editPw.val().trim()))){
+        if (!(regCheck(1, editPw.val().trim()))) {
             alert('비밀번호는 대소문자, 숫자가 있어야합니다.');
             return false;
-        };
+        }
+        ;
 
 
-        if(!confirm('수정하시겠습니까?')){
+        if (!confirm('수정하시겠습니까?')) {
             return false;
         }
 
@@ -121,42 +124,35 @@ function editMember(index) {
 
 }
 
-function editMemberClose(){
+function editMemberClose() {
     document.querySelector('#editFormArea').style.display = 'none';
 }
 
-function isName(string){
+function regCheck(index, string) {
+    var reg = [];
     var regName = /([가-힣]|[a-z])/g;
+    var regPasswords = [/[a-z]/g, /[A-Z]/g, /[0-9]/g];
+    var regEmail = [/\w+@\w+\.\w+/];
 
-    var replacedString = string.replace(regName, '');
+    reg = [regName, regPasswords, regEmail];
+    if (index == 0) {
+        var replacedString = string.replace(regName, '');
+        if (!(replacedString.length == 0)) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
 
-    if (!(replacedString.length == 0)){
-        return false;
-    }else {
+        for (var i = 0; i < reg[index].length; i++) {
+            if (reg[index][i].test(string)) {
+            } else {
+                return false;
+            }
+        }
         return true;
     }
+
 }
 
-function isPassword(string){
-    var regPasswords = [/[a-z]/g,/[A-Z]/g,/[0-9]/g];
 
-    for (var i = 0; i < regPasswords.length; i++) {
-        if(regPasswords[i].test(string)){
-        }else{
-            return false;
-        }
-    }
-    return true;
-}
-
-function isEmail(string){
-    var regEmail = /\w+@\w+\.\w+/;
-
-    if(regEmail.test(string)){
-    }else{
-        return false;
-    }
-
-
-    return true;
-}
