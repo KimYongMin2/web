@@ -129,19 +129,19 @@ function editMemberClose() {
 }
 
 function regCheck(index, string) {
-    var reg = [];
-    var regName = /([가-힣]|[a-z])/g;
-    var regPasswords = [/[a-z]/g, /[A-Z]/g, /[0-9]/g];
-    var regEmail = [/\w+@\w+\.\w+/];
 
-    reg = [regName, regPasswords, regEmail];
+    reg = [/([가-힣]|[a-z])/g, [/[a-z]/g, /[A-Z]/g, /[0-9]/g], [/\w+@\w+\.\w+/]];
+
     if (index == 0) {
-        var replacedString = string.replace(regName, '');
+
+        var replacedString = string.replace(reg[index], '');
+
         if (!(replacedString.length == 0)) {
             return false;
         } else {
             return true;
         }
+
     } else {
 
         for (var i = 0; i < reg[index].length; i++) {
@@ -150,6 +150,7 @@ function regCheck(index, string) {
                 return false;
             }
         }
+
         return true;
     }
 
