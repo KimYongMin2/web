@@ -77,14 +77,16 @@ function editMember(index) {
 
     $('#editForm').submit(function (){
 
-        //var member  = new Member(editUserId.value, editPw.value, editName.value);
-        //console.log(editIndex.value , member);
-
         // 비밀번호와 비밀번호 확인이 같은지 체크
         if(editPw.val() != editRePw.val()){
             alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return false;
         }
+
+        if(!(isEmail(editUserId.val().trim()))){
+           alert('아이디는 이메일 형식으로 입력해주세요');
+            return false;
+        };
 
         if(!(isName(editName.val().trim()))){
             alert('한글과 영문으로 입력해주세요.');
@@ -136,25 +138,25 @@ function isName(string){
 }
 
 function isPassword(string){
-    var regPasswordCapital = /[a-z]/g;
-    var regPasswordSmall = /[A-Z]/g;
-    var regPasswordNum = /[0-9]/g;
+    var regPasswords = [/[a-z]/g,/[A-Z]/g,/[0-9]/g];
 
+    for (var i = 0; i < regPasswords.length; i++) {
+        if(regPasswords[i].test(string)){
+        }else{
+            return false;
+        }
+    }
+    return true;
+}
 
-    if(regPasswordCapital.test(string)){
+function isEmail(string){
+    var regEmail = /\w+@\w+\.\w+/;
+
+    if(regEmail.test(string)){
     }else{
         return false;
     }
 
-    if(regPasswordSmall.test(string)){
-    }else{
-        return false;
-    }
-
-    if(regPasswordNum.test(string)){
-    }else{
-        return false;
-    }
 
     return true;
 }

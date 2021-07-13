@@ -3,6 +3,7 @@
 var members = []; // new Array()
 
 // 사용자 입력한 정보를 가지고 Member객체를 생성
+
 // submit  이벤트 연결
 $(document).ready(function() {
         //localStorage 저장된 데이터가 있는지 확인
@@ -50,6 +51,11 @@ $(document).ready(function() {
                 return false;
             }
 
+            if(!(isEmail(id.val().trim()))){
+                $('#userID+div.msg').html('아이디는 이메일 형식으로 입력해주세요').css('display', 'block');
+                return false;
+            };
+
             if(!(isName(name.val().trim()))){
                 $('#userName+div.msg').html('이름은 한글과 영문으로 입력해주세요.').css('display', 'block');
                 return false;
@@ -76,6 +82,7 @@ $(document).ready(function() {
 
             return false;
         });
+
         $(id).focus(function (){
             $('#userID+div.msg').css('display','none').html('');
         });
